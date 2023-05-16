@@ -1,3 +1,4 @@
+import {client} from "../../api";
 // constants
 export const ADD_USERS = "ADD_USERS";
 
@@ -8,7 +9,8 @@ const addUsers = (users) => ({
 });
 
 export const loadUsers = () => (dispatch) => {
-  fetch('https://jsonplaceholder.typicode.com/users/')
-    .then(res => res.json())
+  client.get('https://jsonplaceholder.typicode.com/users/')
     .then(data => dispatch(addUsers(data)))
+    .catch(err => console.error(err))
+
 }
