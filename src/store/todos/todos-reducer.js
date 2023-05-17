@@ -1,4 +1,4 @@
-import {ADD_TODOS, SET_ERROR, SET_LOADING} from "./todos-action";
+import {ADD_TODO, ADD_TODOS, SET_ERROR, SET_LOADING} from "./todos-actions";
 
 const initialState = {
   status: "idle",
@@ -11,7 +11,13 @@ export const todosReducer = (state = initialState, action) => {
       return {
         ...state,
         list: action.payload,
-        status: "fullfied"
+        status: "fulled"
+      }
+    }
+    case ADD_TODO: {
+      return {
+        ...state,
+        list: [...state.list, action.payload],
       }
     }
     case SET_LOADING: {

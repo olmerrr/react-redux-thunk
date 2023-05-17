@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.new-todo {
+  min-height: 220px;
+  background-color: #ccc;
+  color: #fff;
+  margin-top: 20px;
+  padding: 20px;
+}
